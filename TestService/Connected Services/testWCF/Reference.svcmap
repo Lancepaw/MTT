@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a46cc596-e193-45db-8303-fb8cef81841a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/TestWcfService/TestWCFService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="TestWCFService.xsd" MetadataType="Schema" ID="f75a7f0c-7c92-4a70-8731-c8e54a09a553" SourceId="1" SourceUrl="http://localhost/TestWcfService/TestWCFService.svc?xsd=xsd1" />
+    <MetadataFile FileName="TestWCFService1.xsd" MetadataType="Schema" ID="e8621ba6-e4af-4114-9d24-22ff3ef2c2ff" SourceId="1" SourceUrl="http://localhost/TestWcfService/TestWCFService.svc?xsd=xsd3" />
+    <MetadataFile FileName="TestWCFService2.xsd" MetadataType="Schema" ID="1395d7fa-2281-4d3e-9e78-b280946af349" SourceId="1" SourceUrl="http://localhost/TestWcfService/TestWCFService.svc?xsd=xsd0" />
+    <MetadataFile FileName="TestWCFService3.xsd" MetadataType="Schema" ID="d0cca483-a447-42f4-bced-1173e813c1ac" SourceId="1" SourceUrl="http://localhost/TestWcfService/TestWCFService.svc?xsd=xsd2" />
+    <MetadataFile FileName="TestWCFService.wsdl" MetadataType="Wsdl" ID="373867c4-2acd-4321-a023-becc3a795fa1" SourceId="1" SourceUrl="http://localhost/TestWcfService/TestWCFService.svc?wsdl" />
+    <MetadataFile FileName="TestWCFService.disco" MetadataType="Disco" ID="f224676e-44ad-4fc0-82f8-6641c4636018" SourceId="1" SourceUrl="http://localhost/TestWcfService/TestWCFService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

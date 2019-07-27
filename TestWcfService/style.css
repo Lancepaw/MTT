@@ -1,0 +1,22 @@
+@charset "utf-8";
+/* CSS Document */
+.controls {
+	width: 100%;
+	height:auto;
+	align-content:center;}
+
+.startBTN {
+	width: auto;
+	height: auto;
+	border-radius: 5px;
+	margin: 10px 0 0 0;}
+	
+	
+.count {
+	width: 100px;
+	height: auto;
+	font-size: 14px;
+	margin: 0 0 10px 0;}
+	
+.label {
+	margin: 0 0 5px 0;}

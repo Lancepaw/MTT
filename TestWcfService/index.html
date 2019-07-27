@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Тест работы с WCF</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<script>
+function requestToWCF() {
+	var xhr = new XMLHttpRequest();
+	var n = document.querySelector('.count').value;
+    xhr.open('GET', 'http://localhost/TestWcfService/TestWCFService.svc/json/getN?n='+n, false);
+    xhr.send();
+	
+	var str = xhr.responseText;
+	var rows_count = str.match((/},/g) || []).length + 1;
+	var strings = [];
+	var row_start = 2;
+	var row_end;
+	
+	for (var i = 0; i < rows_count; i++) {
+		if (i < rows_count - 1) {
+			row_end = row_start + (str.substring(row_start).indexOf("},"));
+			strings[i] = str.substring(row_start,row_end);
+			row_start = row_end+3;
+        }
+		else {
+			row_end = row_start + (str.substring(row_start).length-2);
+			strings[i] = str.substring(row_start,row_end);
+        }
+
+	var cheques = [];
+	var c = 0;
+	strings.forEach(function(el) {
+		var s_ind = el.indexOf("\"Id\":") + "\"Id\":".length + 1 ;
+		var s_str = el.substring(s_ind);
+		var e_ind = s_str.indexOf("\",");
+		var Id = s_str.substring(0,e_ind);
+		var s_ind = el.indexOf("\"Number\":") + "\"Number\":".length + 1 ;
+		var s_str = el.substring(s_ind);
+		var e_ind = s_str.indexOf("\",");
+		var Number = s_str.substring(0,e_ind);
+		var s_ind = el.indexOf("\"Summ\":") + "\"Summ\":".length;
+		var Summ = el.substring(s_ind);
+		var s_ind = el.indexOf("\"Discount\":") + "\"Discount\":".length;
+		var s_str = el.substring(s_ind);
+		var e_ind = s_str.indexOf(",");
+		var Discount = s_str.substring(0,e_ind);
+		var s_ind = el.indexOf("\"Articles\":") + "\"Articles\":".length + 1 ;
+		var s_str = el.substring(s_ind);
+		var e_ind = s_str.indexOf("\",");
+		var Articles = s_str.substring(0,e_ind);
+		cheques[c] = {"Id" : Id, "Number" : Number, "Summ" : Summ, "Discount" : Discount, "Articles" : Articles};
+		c++;
+    });
+    }
+	var title = document.createElement('p');
+	
+	title.innerText = "Тест интерфейсов";
+		
+	document.querySelector("body").appendChild(title);
+
+	cheques.forEach(function(che) {
+		var li = document.createElement('li');
+		li.innerText = 'ID: ' + che.Id +' Number: ' + che.Number +' Summ: ' + che.Summ +' Discount: ' + che.Discount +' Articles: ' + che.Articles;
+		document.querySelector("body").appendChild(li);
+    });
+}
+</script>
+</head>
+
+<body>
+	<form class="controls">
+    	<p class="label">Введите количество чеков, которые вы хотите выгрузить</p>
+    	<input type="text" class="count">
+    	<button type = "button" class="startBTN" onClick="requestToWCF()">Старт</button>
+    </form>
+</body>
+</html>
